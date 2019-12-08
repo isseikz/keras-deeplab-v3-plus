@@ -10,7 +10,7 @@ MODEL_DIR = 'models'
 for backbone in ['mobilenetv2', 'xception']:
     print('Instantiating an empty Deeplabv3+ model...')
     model = Deeplabv3(input_shape=(512, 512, 3),
-                      classes=21, backbone=backbone, weights=None)
+                      classes=21, backbone=backbone, weights='pascal_voc')
 
     WEIGHTS_DIR = 'weights/' + backbone
     print('Loading weights from', WEIGHTS_DIR)

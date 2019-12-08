@@ -59,7 +59,7 @@ def extract_tensors_from_checkpoint_file(filename, output_folder='weights', net_
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    reader = tf.train.NewCheckpointReader(filename)
+    reader = tf.compat.v1.train.NewCheckpointReader(filename)
 
     for key in reader.get_variable_to_shape_map():
         # convert tensor name into the corresponding Keras layer weight name and save
